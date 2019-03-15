@@ -99,6 +99,7 @@ Run following command to build spark repo:
 
     git clone https://github.com/mesosphere/spark-build.git
     cd spark-build
+    git clone https://github.com/mesosphere/spark.git
     sudo ./publish_local_spark.sh --spark-dist-dir spark --docker-dist-image <docker-hub-user>/spark-dev:<image-tag>
 
 Sometime it gives ``unable to fetch aws credential`` because of sudo use, then use following command:
