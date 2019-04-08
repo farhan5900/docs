@@ -17,8 +17,13 @@ Run the tests:
   .. code-block:: bash
 
     git clone https://github.com/mesosphere/spark-build.git
+    git clone https://github.com/mesosphere/spark.git
     cd spark-build
+    sudo -E ./publish_local_spark.sh --spark-dist-dir spark --docker-dist-image <docker-hub-user>/spark-dev:<image-tag> #To generate universe stub
+    export UNIVERSE_STUB_URL=<stub-url>
     export DOCKER_DIST_IMAGE=<docker-hub-user>/spark-dev:<image-tag>
     export CLUSTER_URL=<cluster_url>   # To point to an existing cluster
-    PYTEST_ARGS="-k <test_name>"       # Select the specific test to run
-    sudo -E make test
+    export PYTEST_ARGS="-k <test_name>"       # Select the specific test to run
+    make test-jars 		       # To generate test_jar_url, also run it if you make changes in tests/job/scala
+    export TEST_SH_DCOS_SPARK_TEST_JAR_URL=<s3_test_jar_url>
+    sudo -E ./test.sh
