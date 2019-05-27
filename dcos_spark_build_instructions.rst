@@ -8,9 +8,7 @@ Pre-Requisits
 
   .. code-block:: bash
 
-    sudo add-apt-repository ppa:webupd8team/java
-    sudo apt update
-    sudo apt install oracle-java8-installer
+    sudo apt-get install openjdk-8-jdk
     java -version
 
 - **Install Go**
