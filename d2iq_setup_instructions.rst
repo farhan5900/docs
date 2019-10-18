@@ -132,3 +132,12 @@ D2IQ Setup Instructions
     chmod +x kubectl-kudo_0.7.5_linux_x86_64
     sudo mv kubectl-kudo_0.7.5_linux_x86_64 /usr/local/bin/kubectl-kudo
 
+- **Setup GitHub SSH Key**
+
+  .. code-block:: bash
+
+    ssh-keygen -t rsa
+    sudo apt-get install xclip
+    xclip -sel clip < ~/.ssh/id_rsa.pub
+
+  Go to GitHub settings and paste the key.
