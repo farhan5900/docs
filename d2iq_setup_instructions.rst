@@ -141,3 +141,10 @@ D2IQ Setup Instructions
     xclip -sel clip < ~/.ssh/id_rsa.pub
 
   Go to GitHub settings and paste the key.
+
+- **Setup Slack/VSCode**
+
+  .. code-block:: bash
+
+    sudo snap install --classic slack
+    sudo snap install --classic code
