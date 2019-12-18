@@ -1,0 +1,16 @@
+#Start HDFS
+cp hadoop-etc-hadoop/* $HADOOP_HOME/etc/hadoop/
+$HADOOP_HOME/bin/hdfs namenode -format
+$HADOOP_HOME/sbin/start-dfs.sh
+
+#Start Kafka
+$KAFKA_HOME/bin/zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+$KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties
+$KAFKA_HOME/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test_topic
+$KAFKA_HOME/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test_topic
+
+#Run Spark
+cp spark-conf/* $SPARK_HOME/conf/
+$SPARK_HOME/bin/spark-submit --master local --class org.kafka.spark.hadoop.KafkaSparkHadoopMain kafka_spark_hadoop/kafka_spark_hadoop-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+
+#Output Location on HDFS: hdfs://localhost:9000/output
