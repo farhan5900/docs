@@ -13,7 +13,8 @@ Run following command to build spark repo:
     git clone -b custom-branch-2.4.x https://github.com/mesosphere/spark.git
     sudo ./publish_local_spark.sh --spark-dist-dir spark --docker-dist-image <docker-hub-user>/spark-dev:<image-tag>
 
-Sometime it gives ``unable to fetch aws credential`` because of sudo use, then use following command:
+Sometime it gives ``unable to fetch aws credential`` because of sudo use,
+then use following command:
 
   .. code-block:: bash
 
@@ -21,7 +22,9 @@ Sometime it gives ``unable to fetch aws credential`` because of sudo use, then u
 
 ``publish_local_spark.sh`` will generate stub url.
 
-Now we can install dcos cli and setup the cluster. After that, run following command to install spark service and subcommand cli as well.
+Now we can install dcos cli and setup the cluster.
+After that, run following command to install spark
+service and subcommand cli as well.
 
   .. code-block:: bash
 
