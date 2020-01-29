@@ -1,14 +1,6 @@
 DC/OS Spark-Build Testing Instructions
 ======================================
 
-Pre-Requisits
--------------
-
-- Refer `Spark-Build Instructions Pre-Requsits`_
-
-  .. _Spark-Build Instructions Pre-Requsits: https://github.com/farhan5900/docs/blob/master/dcos_spark_build_instructions.rst#pre-requisits
-
-
 Build Spark Tests
 -----------------
 

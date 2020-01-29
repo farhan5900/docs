@@ -132,11 +132,27 @@ D2IQ Setup Instructions
     chmod +x kubectl-kudo_0.7.5_linux_x86_64
     sudo mv kubectl-kudo_0.7.5_linux_x86_64 /usr/local/bin/kubectl-kudo
 
+- **Setup Terraform**
+
+  .. code-block:: bash
+
+    wget https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
+    unzip terraform_0.11.14_linux_amd64.zip
+    sudo mv terraform /usr/local/bin/terraform
+    terraform version
+
+- **Setup SSH**
+
+  .. code-block:: bash
+
+    sudo apt-get install openssh-server
+    ssh -V
+
 - **Setup GitHub SSH Key**
 
   .. code-block:: bash
 
-    ssh-keygen -t rsa
+    ssh-keygen -t rsa  # Skip if already has key generated
     sudo apt-get install xclip
     xclip -sel clip < ~/.ssh/id_rsa.pub
 
