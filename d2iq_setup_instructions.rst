@@ -141,6 +141,17 @@ D2IQ Setup Instructions
     # add to your path
     sudo mv kubectl-kudo /usr/local/bin/kubectl-kudo
 
+- **Setup Git Bash Prompt**
+
+  .. code-block:: bash
+
+    git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+    # Add to the ~/.bashrc
+    if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+        GIT_PROMPT_ONLY_IN_REPO=1
+        source $HOME/.bash-git-prompt/gitprompt.sh
+    fi
+
 - **Setup Terraform**
 
   .. code-block:: bash
