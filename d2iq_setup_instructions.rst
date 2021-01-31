@@ -132,6 +132,15 @@ D2IQ Setup Instructions
     chmod +x kubectl-kudo_0.7.5_linux_x86_64
     sudo mv kubectl-kudo_0.7.5_linux_x86_64 /usr/local/bin/kubectl-kudo
 
+    # OR
+    VERSION=x.y.z # look up the current stable release at https://github.com/kudobuilder/kudo/releases/latest
+    OS=$(uname | tr '[:upper:]' '[:lower:]')
+    ARCH=$(uname -m)
+    wget -O kubectl-kudo https://github.com/kudobuilder/kudo/releases/download/v${VERSION}/kubectl-kudo_${VERSION}_${OS}_${ARCH}
+    chmod +x kubectl-kudo
+    # add to your path
+    sudo mv kubectl-kudo /usr/local/bin/kubectl-kudo
+
 - **Setup Terraform**
 
   .. code-block:: bash
